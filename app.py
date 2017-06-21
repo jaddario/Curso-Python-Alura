@@ -1,5 +1,7 @@
 # -*- coding: UTF-8 -*-
 
+import re
+
 def cadastrar(lista_de_nomes):
     print 'Digite o nome que você quer cadastrar:'
     nome = raw_input()
@@ -37,6 +39,14 @@ def procurar_nome_da_lista(lista_de_nomes):
 	else:
 		print 'Não existe esse convidado na lista'				
 
+def procurar_nome_regex(lista_de_nomes):
+	print 'Digite a expressão regular'
+	regex = raw_input()
+	nomes_concatenados = ' '.join(lista_de_nomes)
+	resultado = re.findall(regex, nomes_concatenados)
+	print resultado
+
+
 def menu():
     lista_de_nomes = []
     escolha = ''
@@ -58,4 +68,7 @@ def menu():
 
         if(escolha == '5'):
             procurar_nome_da_lista(lista_de_nomes)    
+
+        if(escolha == '6'):
+            procurar_nome_regex(lista_de_nomes)    
 menu()
