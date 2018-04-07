@@ -5,10 +5,17 @@ class Perfil(object):
 	def __init__(self, nome, telefone, empresa):
 		self.nome = nome
 		self.telefone = telefone
-		self.empresa = empresa	
+		self.empresa = empresa
+		self.__curtidas = 0	
 
 	def imprimir(self):
-		print "Nome : %s, Empresa : %s, Telefone : %s" % (self.nome, self.telefone, self.empresa)	
+		print "Nome : %s, Empresa : %s, Telefone : %s, Curtidas : %s" % (self.nome, self.telefone, self.empresa, self.__curtidas)
+
+	def curtir(self):
+		self.__curtidas+=1
+
+	def obter_curtidas(self):
+		return self.__curtidas	 		
 
 
 class Data(object):
